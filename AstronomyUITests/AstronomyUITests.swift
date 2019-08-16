@@ -45,11 +45,11 @@ class AstronomyUITests: XCTestCase {
         XCTAssert(app.navigationBars["Title"].exists)
         
         
-        let element2 = app.collectionViews.element.children(matching: .other).element
-        
-        XCTAssert(element2.exists)
-        
-        
+//        let element2 = app.collectionViews.element.children(matching: .other).element
+//
+//        XCTAssert(element2.exists)
+//
+        XCTAssert(app.images["PhotoDetailViewController.ImageView"].exists)
         
     }
     
