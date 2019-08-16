@@ -29,16 +29,14 @@ class AstronomyUITests: XCTestCase {
     }
     func testSwipeDown() {
         let app = XCUIApplication()
-        let collectionViewsQuery = app.collectionViews
-        collectionViewsQuery.children(matching: .cell).element(boundBy: 6).children(matching: .other).element.swipeUp()
-        collectionViewsQuery.children(matching: .cell).element(boundBy: 2).children(matching: .other).element.swipeDown()
+        app.collectionViews.element.swipeDown()
+      
+    }
+    
+    func testSwipeUp(){
+        let app = XCUIApplication()
         
-        let element = collectionViewsQuery.children(matching: .cell).element(boundBy: 0).children(matching: .other).element
-        element.swipeDown()
-        app.navigationBars["Title"].buttons["Sol 14"].tap()
-        element.tap()
-        
-        app/*@START_MENU_TOKEN@*/.buttons["PhotoDetailViewController.SaveButton"]/*[[".buttons[\"Save to Photo Library\"]",".buttons[\"PhotoDetailViewController.SaveButton\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        app.collectionViews.element.swipeUp()
     }
     func testLoadImage() {
         let app = XCUIApplication()
@@ -51,7 +49,7 @@ class AstronomyUITests: XCTestCase {
         
         XCTAssert(element2.exists)
         
-         
+        
         
     }
     
